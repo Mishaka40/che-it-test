@@ -1,0 +1,97 @@
+@import "../mixins";
+
+.promo{
+  padding: rem(38) 0;
+  background: var(--primary);
+  margin-bottom: rem(60);
+
+  &__container{
+    display: flex;
+    align-items: center;
+  }
+  &__content {
+    width: 48%;
+    flex-shrink: 0;
+    margin-right: rem(40);
+  }
+  &__subtitle {
+    font-size: remF(14);
+    line-height: remF(24);
+    margin-bottom: rem(5);
+    color: var(--white);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  &__title {
+    margin-bottom: rem(32);
+  }
+  &__text {
+    font-size: remF(18);
+    line-height: 156%;
+    margin-bottom: rem(40);
+  }
+  &__img{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 84.7%;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-image: url("../../img/promo_overlay.svg");
+      background-size: contain;
+      background-position: bottom center;
+      background-repeat: no-repeat;
+      z-index: 2;
+    }
+    >img{
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      mask-image: url("../../img/promo_mask.svg");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      mask-position: center;
+      width: 68.5%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+
+  @media(max-width: 768px){
+    margin-bottom: 45px;
+    &__container {
+      flex-direction: column;
+    }
+
+    &__content {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+
+    &__img {
+      max-height: 300px;
+    }
+
+    &__text {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+
+    &__title {
+      margin-bottom: 20px;
+    }
+
+  }
+}
+  

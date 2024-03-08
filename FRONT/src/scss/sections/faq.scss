@@ -1,0 +1,20 @@
+@import "../mixins";
+
+.faq{
+  margin-bottom: rem(60);
+  &__title,
+  &__subtitle{
+    margin-bottom: rem(12);
+    text-align: center;
+  }
+  .accordion-container:not(:first-child){
+    margin-top: rem(40);
+  }
+  @media(max-width: 768px){
+    margin-bottom: 45px;
+    .accordion-container:not(:first-child){
+      margin-top: 30px;
+    }
+  }
+}
+  

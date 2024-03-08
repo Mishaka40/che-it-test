@@ -1,0 +1,1 @@
+sectionJS(".promo",function(o){o.forEach(o=>{})});
